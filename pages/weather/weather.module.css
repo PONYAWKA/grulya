@@ -1,0 +1,8 @@
+.Weather__Container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Weather__Images {
+  width: 70%;
+}

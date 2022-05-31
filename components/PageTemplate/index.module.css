@@ -1,0 +1,38 @@
+.Body__NavBar {
+  width: 30%;
+  max-width: 250px;
+}
+.Body__Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Body__Content {
+  display: flex;
+  margin-top: 2.5vh;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 15px;
+  width: 97.5vw;
+  height: 95vh;
+}
+.RMenu__Container {
+  position: absolute;
+  top: 2.5vh;
+  right: 40px;
+}
+.RMenu__Content {
+  width: 32px;
+  height: 120px;
+  background: linear-gradient(180deg, #bebebe 0%, #dab7b7 69.08%, #cda9a9 100%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.32);
+  border-radius: 0 0 16px 16px;
+  display: flex;
+  flex-direction: column;
+}
+.RMenu__Image {
+  display: flex;
+  justify-content: center;
+  margin: 5px 0px;
+}
+
