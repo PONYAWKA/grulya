@@ -13,36 +13,39 @@ type Coord = {
 const Weather = () => {
   const [location, setLocation] = React.useState<Coord>();
   const [wet, setWet] = React.useState<Boolean>(false);
+  const [firstTime, setFirstTime] = React.useState<Boolean>(true);
   React.useEffect(() => {
     navigator.geolocation.getCurrentPosition((pos) => {
       setLocation({ lat: pos.coords.latitude, lon: pos.coords.longitude });
     });
+    axios
+      .get(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${location?.lat}&lon=${location?.lon}&appid=f75c50e0325316c5204c1e70eacf927b`
+      )
+      .finally((info) => {
+        if (
+          (info && info.data.weather[0].main === "Thunderstorm") ||
+          "Drizzle" ||
+          "Rain" ||
+          "Snow"
+        ) {
+          setWet(true);
+          setFirstTime(false);
+        }
+      });
   }, []);
-  axios
-    .get(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${location?.lat}&lon=${location?.lon}&appid=f75c50e0325316c5204c1e70eacf927b`
-    )
-    .then((info) => {
-      if (
-        (info && info.data.weather[0].main === "Thunderstorm") ||
-        "Drizzle" ||
-        "Rain" ||
-        "Snow"
-      ) {
-        setWet(true);
-      }
-    });
 
   return (
     <div>
       <PageTemplate>
         <div className={style.Weather__Container}>
           <div className={style.Weather__Images}>
-            {wet ? (
-              <Image src={Wet} alt="..." />
-            ) : (
-              <Image src={Dry} alt="..." />
-            )}
+            {!firstTime &&
+              (wet ? (
+                <Image src={Wet} alt="..." />
+              ) : (
+                <Image src={Dry} alt="..." />
+              ))}
           </div>
         </div>
       </PageTemplate>
