@@ -1,0 +1,121 @@
+.Counter__Body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.Couner__Container {
+  margin-left: 10%;
+}
+.Counter__Content {
+  position: relative;
+  display: block;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 100px;
+  text-shadow: 7px 7px 0px #dab7b7;
+  margin-bottom: -50%;
+}
+.Counter__HiddenNumber {
+  opacity: 0;
+}
+.Counter__HiddenNumber[about="true"] {
+  animation: showHidden 0.55s 1;
+}
+@keyframes showHidden {
+
+  29% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 1;
+    transform: translateY(-116%);
+  }
+}
+.csscrutch[cr="true"] {
+  animation: no 0.53s 1;
+}
+@keyframes no {
+  100% {
+    opacity: 0;
+  }
+}
+
+.Counter__FirstNumber[about="true"] {
+  animation: HiddenShow 0.55s 1;
+}
+@keyframes HiddenShow {
+  15% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-116%);
+  }
+}
+.Counter__Content::after {
+  width: 105%;
+  height: 80%;
+  content: "   ";
+  position: absolute;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 1)
+  );
+  top: 0;
+  left: 0;
+}
+.Counter__Button {
+  font-family: "Rubik";
+  font-size: 100px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #cdcdcd 0%, #cda9a9 100%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  justify-content: center;
+}
+.Couner__Number {
+  margin: 20px 0;
+}
+.Counter__Content[about="true"] {
+  animation: spaw 0.55s 1;
+}
+.Couner__Number[about="true"] {
+  animation: spaw 0.55s 1;
+}
+.Couner__seven {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-left: "-10%";
+  cursor: pointer;
+}
+@keyframes spaw {
+  0% {
+  }
+  100% {
+    transform: translateY(-116%);
+  }
+}
+@media (max-width: 650px) {
+  .Counter__Content {
+    font-size: 70px;
+  }
+  .Counter__Button {
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+  }
+}

@@ -20,6 +20,7 @@
   position: absolute;
   top: 2.5vh;
   right: 40px;
+  z-index: 9999;
 }
 .RMenu__Content {
   width: 32px;
@@ -35,4 +36,19 @@
   justify-content: center;
   margin: 5px 0px;
 }
-
+@media (max-width: 500px) {
+  .Body__NavBar {
+    width: 33%;
+  }
+}
+@media (max-width: 460px) {
+  .Body__Content {
+    flex-direction: column-reverse;
+  }
+  .Body__NavBar {
+    width: 100%;
+    max-width: none;
+  }
+  .Body__Container {
+  }
+}

@@ -10,7 +10,7 @@ type type = { children: React.ReactNode };
 export const PageTemplate: React.FC<type> = ({ children }) => {
   return (
     <div className={style.Body__Container}>
-      <div className={style.Body__Content}>
+      <div className={style.Body__Content} >
         <div className={style.Body__NavBar}>
           <NavBar />
           <div className={style.RMenu__Container}>
