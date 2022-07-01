@@ -3,11 +3,11 @@ import { PageTemplate } from "../../components/PageTemplate/PageTemplate";
 import style from "./count.module.css";
 
 const Count = () => {
-  const [counter, setCounter] = useState < Array < number >> [993, 1000, 0, 0];
-  const [jscrutch, setJsCrutch] = useState < Boolean > false;
-  const [finish, setFinish] = useState < boolean > false;
-  const [winSound, setWinSound] = useState < any > null;
-  const [ainmation, setAnimation] = useState < boolean > false;
+  const [counter, setCounter] = useState([993, 1000, 0, 0]);
+  const [jscrutch, setJsCrutch] = useState(false);
+  const [finish, setFinish] = useState(false);
+  const [winSound, setWinSound] = useState(null);
+  const [ainmation, setAnimation] = useState(false);
   React.useEffect(() => {
     setWinSound(new Audio("/sound/win.mp3"));
   }, []);
