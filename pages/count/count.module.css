@@ -17,6 +17,7 @@
   font-size: 100px;
   text-shadow: 7px 7px 0px #dab7b7;
   margin-bottom: -50%;
+  min-width: 250px;
 }
 .Counter__HiddenNumber {
   opacity: 0;
@@ -25,7 +26,6 @@
   animation: showHidden 0.55s 1;
 }
 @keyframes showHidden {
-
   29% {
     opacity: 0;
   }
